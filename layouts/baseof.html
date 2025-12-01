@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" data-bs-theme="dark">
 <head>
-  {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 </head>
 <body>
-  <header>
-    {{ partial "header.html" . }}
-  </header>
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
-  <footer>
-    {{ partial "footer.html" . }}
-  </footer>
+{{ partial "nav.html" (dict "menuID" "main" "page" .) }}
+	<div class="container-xl bd-gutter mt-3 my-md-3 bd-layout">
+		<div class="row justify-content-center">
+			<div class="bd-main col-xl-8 col-lg-9 col-md-11">
+	{{ block "main" . }}{{ end }}
+			</div>
+		</div>
+	</div>
+{{ partial "footer.html" . }}
 </body>
 </html>

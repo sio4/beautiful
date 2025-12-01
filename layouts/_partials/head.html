@@ -1,5 +1,11 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+	<meta charset="utf-8">
+	<meta name="content-language" content="{{ site.Language.Lang }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+{{- partial "head/bootstrap" . }}
+
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
+
+{{ partial "head_custom.html" . }}
