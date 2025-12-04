@@ -1,0 +1,118 @@
+.navbar {
+	padding: 20px 0;
+	-webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+	-moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+	transition: background .5s ease-in-out, padding .5s ease-in-out;
+	&.top-nav-short {
+		padding: 0;
+		.avatar-container {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+.avatar-container {
+	opacity: 1;
+	visibility: visible;
+	position: absolute;
+	-webkit-transition: visibility 0.5s, opacity 0.5s ease-in-out;
+	-moz-transition: visibility 0.5s, opacity 0.5s ease-in-out;
+	transition: visibility 0.5s, opacity 0.5s ease-in-out;
+	left: 50%;
+	width: 100px;
+	margin-top: 60px;
+	.avatar-img-border {
+		width: 100%;
+		border-radius: 50%;
+		margin-left: -50%;
+		display: inline-block;
+		a {
+			.avatar-img {
+				width: 100%;
+				border: 5px solid rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+				border-radius: 50%;
+				display: block;
+			}
+		}
+	}
+}
+
+.intro-header {
+	.beauty-heading {
+		h1 {
+		}
+		hr.small {
+			margin: .75em auto;
+		}
+		.beauty-subheading {
+			font-size: 1.4em;
+			font-weight: 200;
+		}
+	}
+
+	.home-heading,
+	.section-heading,
+	.taxonomy-heading,
+	.term-heading,
+	.page-page-heading {
+		text-align: center;
+		h1 {
+			font-size: 3.0em;
+		}
+		hr.small {
+			width: 30%;
+			border-width: 2px;
+		}
+	}
+
+	&.big-img {
+		background: no-repeat center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		-o-background-size: cover;
+		-webkit-transition: background .9s ease-in-out, padding .9s ease-in-out;
+		-moz-transition: background .9s ease-in-out,padding .9s ease-in-out;
+		transition: background .9s ease-in-out, padding .9s ease-in-out;
+
+		.beauty-heading {
+			padding: 150px 0;
+			color: #fff;
+
+			text-align: center;
+			text-shadow: 1px 1px 3px #555;
+			hr.small {
+				opacity: .6;
+				box-shadow: 1px 1px 3px #555;
+			}
+		}
+	}
+	&.no-img {
+		.home-heading,
+		.section-heading,
+		.taxonomy-heading,
+		.term-heading,
+		.page-page-heading {
+			h1 {
+			}
+		}
+	}
+}
+
+.intro-header.big-img .img-desc {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		padding: 5px 10px;
+		color: #EEE;
+		background: rgba(30, 30, 30, 0.6);
+		font-size: 11px;
+		display: none;
+}
+
+@media only screen and (min-width: 768px) {
+		.intro-header.big-img .img-desc {
+				font-size: 14px;
+		}
+}
