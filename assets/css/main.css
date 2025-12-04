@@ -1,6 +1,5 @@
 /* --- beautiful jekyll integration --- */
 .navbar {
-	text-transform: uppercase;
 	padding: 20px 0;
 	-webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
 	-moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -31,6 +30,65 @@
 			border: 5px solid rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
 			border-radius: 50%;
 			display: block; }
+
+.intro-header .beauty-heading hr.small {
+	margin: .75em auto; }
+
+.intro-header .beauty-heading .beauty-subheading {
+	font-size: 1.4em;
+	font-weight: 200; }
+
+.intro-header .home-heading,
+.intro-header .section-heading,
+.intro-header .taxonomy-heading,
+.intro-header .term-heading,
+.intro-header .page-page-heading {
+	text-align: center; }
+	.intro-header .home-heading h1,
+	.intro-header .section-heading h1,
+	.intro-header .taxonomy-heading h1,
+	.intro-header .term-heading h1,
+	.intro-header .page-page-heading h1 {
+		font-size: 3.0em; }
+	.intro-header .home-heading hr.small,
+	.intro-header .section-heading hr.small,
+	.intro-header .taxonomy-heading hr.small,
+	.intro-header .term-heading hr.small,
+	.intro-header .page-page-heading hr.small {
+		width: 30%;
+		border-width: 2px; }
+
+.intro-header.big-img {
+	background: no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	-webkit-transition: background .9s ease-in-out, padding .9s ease-in-out;
+	-moz-transition: background .9s ease-in-out,padding .9s ease-in-out;
+	transition: background .9s ease-in-out, padding .9s ease-in-out; }
+	.intro-header.big-img .beauty-heading {
+		padding: 150px 0;
+		color: #fff;
+		text-align: center;
+		text-shadow: 1px 1px 3px #555; }
+		.intro-header.big-img .beauty-heading hr.small {
+			opacity: .6;
+			box-shadow: 1px 1px 3px #555; }
+
+.intro-header.big-img .img-desc {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 5px 10px;
+	color: #EEE;
+	background: rgba(30, 30, 30, 0.6);
+	font-size: 11px;
+	display: none; }
+
+@media only screen and (min-width: 768px) {
+	.intro-header.big-img .img-desc {
+		font-size: 14px; } }
 
 /* -- bootstrap custom color -- */
 :root,
@@ -106,7 +164,7 @@
 	--bs-body-font-family: var(--bs-font-sans-serif);
 	--bs-body-font-size: 1rem;
 	--bs-body-font-weight: 400;
-	--bs-body-line-height: 1.5;
+	--bs-body-line-height: 1.8;
 	--bs-body-color: #212529;
 	--bs-body-color-rgb: 33, 37, 41;
 	--bs-body-bg: #fff;
