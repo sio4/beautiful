@@ -9,7 +9,7 @@ Renders a menu for the given menu ID.
 
 {{- $page := .page }}
 {{- $menuID := .menuID }}
-	<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+	<nav class="navbar navbar-expand-lg bg-body-secondary sticky-top">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="{{ site.BaseURL}}">{{ site.Title }}</a>
 			<button class="navbar-toggler" type="button"
@@ -55,7 +55,7 @@ Renders a menu for the given menu ID.
 	{{- with .Children }}
 					<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ $name }}</a>
-					<ul class="dropdown-menu dropdown-menu-end">
+					<ul class="dropdown-menu dropdown-menu-end bg-body-secondary">
 	{{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
 					</ul>
 					</li>

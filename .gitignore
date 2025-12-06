@@ -1,3 +1,7 @@
+# temporary files
+.*
+
+# hugo files
 .hugo_build.lock
 public/
 resources/

@@ -5,14 +5,17 @@
 </head>
 <body>
 {{ partial "nav.html" (dict "menuID" "main" "page" .) }}
-{{ partial "header.html" . }}
+
+<article class="beauty-article">
+{{- partial "header.html" . }}
 	<div class="container-xl beauty-container">
 		<div class="row beauty-row justify-content-center">
 			<div class="beauty-col col-xl-8 col-lg-9 col-md-11">
-	{{ block "main" . }}{{ end }}
+{{- block "main" . }}{{ end }}
 			</div>
 		</div>
 	</div>
+</article>
 {{ partial "footer.html" . }}
 </body>
 </html>

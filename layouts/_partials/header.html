@@ -38,13 +38,13 @@
 			<div class="container-xl beauty-container">
 				<div class="row beauty-row justify-content-center">
 					<div class="beauty-col col-xl-8 col-lg-9 col-md-11">
-						<div class="beauty-heading {{ .Kind }}-heading {{ .Kind }}-{{ .Type }}-heading">
+						<div class="beauty-header {{ .Kind }}-header {{ .Kind }}-{{ .Type }}-header">
 							<h1>{{ $title }}</h1>
 							<hr class="small">
-							<span class="beauty-subheading {{ .Kind }}-{{ .Type }}-subheading">{{ $subtitle }}</span>
-							{{- if eq .Type "post" }}
-							{{- /* partial "post_meta.html" . */}}
-							{{-  end }}
+							<span class="beauty-subheader {{ .Kind }}-{{ .Type }}-subheader">{{ $subtitle }}</span>
+							{{- if eq .Kind "page" }}
+							{{- partial "page_meta.html" . }}
+							{{- end }}
 						</div>
 					</div>
 				</div>

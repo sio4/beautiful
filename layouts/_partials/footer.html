@@ -1,13 +1,54 @@
+<div class="beauty-ui-footer bg-body-tertiary py-4 text-center">
 	<div class="container-xl beauty-container">
 		<div class="row beauty-row justify-content-center">
 			<div class="beauty-col col-xl-8 col-lg-9 col-md-11">
-				<p>Copyright {{ now.Year }}. All rights reserved.</p>
+
+				<div class="footer-social-ribbon my-4">
+				{{- range $k, $v := site.Params.author }}
+					{{- $s := index site.Data.beautiful.social $k }}
+					{{- with $s }}
+						{{- $f := or .url "%s" }}
+					<a href="{{ printf $f $v }}" class="mx-1">
+						<span class="fa-stack fa-lg">
+							<i class="fa-solid fa-circle fa-stack-2x"></i>
+							<i class="{{ .icon }} fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+					{{- end }}
+				{{- end }}
+				</div>
+				<div class="footer-copyright text-muted">
+					<p>
+					&copy;
+					{{ with site.Params.since }}{{ . }} - {{ end -}}
+					{{ site.Lastmod.Format "2006" }}
+					{{ with site.Params.author.name }}{{ . }}{{ end }}
+					All rights reserved.
+					</p>
+					<p>
+					{{ site.Title }}
+					</p>
+				</div>
+				<div class="footer-powered text-muted fst-italic small">
+					Built with
+					<a href="https://gohugo.io/">Hugo v{{ site.Hugo.Version }}</a>
+					+ Yet Another
+					<a href="https://github.com/sio4/beautiful">Beautiful Hugo Theme</a>,
+					highly inspired by lovely
+					<a href="https://beautifuljekyll.com/">Beautiful Jekyll</a>
+				</div>
+
 			</div>
 		</div>
 	</div>
+</div>
 
+	<!--
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 {{- range resources.Match "js/*.js" }}
 	{{- $opts := dict

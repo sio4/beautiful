@@ -1,0 +1,7 @@
+minute:
+  one: "{{ . }} minute"
+  other: "{{ . }} minutes"
+word:
+  one: "{{ . }} word"
+  other: "{{ . }} words"
+translations: "Translations:"

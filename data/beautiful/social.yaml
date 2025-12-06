@@ -1,0 +1,16 @@
+github:
+  icon: fa-brands fa-github
+  url: https://github.com/%s
+stackoverflow:
+  icon: fa-brands fa-stack-overflow
+  url: https://stackoverflow.com/%s
+linkedin:
+  icon: fa-brands fa-linkedin
+  url: https://linkedin.com/in/%s
+facebook:
+  icon: fa-brands fa-facebook
+  url: https://facebook.com/%s
+twitter:
+  icon: fa-brands fa-twitter
+  url: https://twitter.com/%s
+
