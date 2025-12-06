@@ -1,19 +1,19 @@
 {{- if not .Params.suppressMeta }}
 {{- $pubd := or .PublishDate .Date }}
-							<div class="page-meta">
+							<div class="page-meta text-muted small">
 {{- if gt $pubd.Unix 0 }}
 								<time class="published-time" datetime="{{
 									time.Format "2006-01-02T15:04:05-07:00" $pubd }}">{{
 									time.Format ":date_long" $pubd }}</time>
 {{- end }}
 {{- if .Site.Params.readingTime }}
-								<span class="reading-time">{{ T "minute" .ReadingTime }}</span>
+								| <span class="reading-time">{{ T "minute" .ReadingTime }}</span>
 {{- end }}
 {{- if .Site.Params.wordCount }}
-								<span class="word-count">{{ T "word" .WordCount }}</span>
+								| <span class="word-count">{{ T "word" .WordCount }}</span>
 {{- end }}
 {{- range .Params.categories }}
-								<span class="word-count">{{ replace . "-" " " |title }}</span>
+								| <span class="category">{{ replace . "-" " " |title }}</span>
 {{- end }}
 							</div>
 {{- end }}
