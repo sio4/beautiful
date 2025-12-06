@@ -1,7 +1,32 @@
-{{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
-{{ end }}
+{{- define "main" }}
+{{- if eq .Type "tags" }}
+	{{- $fmin := 10 }}
+	{{- $fmax := 50 }}
+				<article class="hugo-taxonomy beauty-tagcloud text-center">
+				{{- range .Pages.ByTitle }}
+					{{- $s := mul .Pages.Len 0.5 }}
+					{{- $s = add $s 0.5 }}
+					{{- $s = math.Log $s }}
+					{{- $s = mul $s 8 }}
+					{{- $s = add $s $fmin }}
+					{{- $w := mul $s 15 }}
+					{{- $w = add $w 200 }}
+					<span style="white-space: nowrap; font-size: {{ $s }}px{{
+						if ge $s 24 }}; font-weight: {{ $w }}{{
+						end }}" title="{{ .Pages.Len }}"><a href="{{
+							.RelPermalink }}">{{ .LinkTitle }}</a></span>
+				{{- end }}
+				</article>
+{{- else }}
+				<article class="hugo-taxonomy taxonomy-list">
+				{{- range .Pages }}
+				<div>
+					<h4>
+						<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+						<span class="text-muted small">{{ .Pages.Len }}</span>
+					</h4>
+				</div>
+				{{- end }}
+				</article>
+{{- end }}
+{{- end }}
