@@ -1,7 +1,14 @@
+// --- common default --------------------------------------------------------
 a {
-	text-decoration: none;
+	text-decoration: var(--bs-link-decoration);
 }
 
+img {
+  display: block;
+  margin: auto;
+}
+
+// --- navbar ----------------------------------------------------------------
 .navbar {
 	padding: 20px 0;
 	-webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
@@ -34,7 +41,7 @@ a {
 		a {
 			.avatar-img {
 				width: 100%;
-				border: 5px solid rgba(var(--bs-secondary-bg-rgb), var(--bs-bg-opacity)) !important;
+				border: 5px solid rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
 				border-radius: 50%;
 				display: block;
 			}
@@ -42,6 +49,7 @@ a {
 	}
 }
 
+// --- page header -----------------------------------------------------------
 .intro-header {
 	.beauty-header {
 		h1 {
@@ -125,6 +133,7 @@ a {
 		}
 }
 
+// --- common footer ---------------------------------------------------------
 .beauty-ui-footer {
 	a {
 		color: var(--bs-dark-text-emphasis);
@@ -134,4 +143,18 @@ a {
 	}
 	.footer-social-ribbon {
 	}
+}
+
+// --- post preview ----------------------------------------------------------
+.beauty-post-preview {
+  a.beauty-post-link {
+	  --bs-link-color-rgb: var(--bs-body-color-rgb);
+	  &:hover {
+		  --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+	  }
+    img {
+      max-height: 360px;
+      width: auto;
+    }
+  }
 }

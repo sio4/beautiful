@@ -1,22 +1,23 @@
 {{- if not .Params.suppressMeta }}
-{{- $pubd := or .PublishDate .Date }}
+	{{- $pubd := or .PublishDate .Date }}
 							<div class="page-meta text-muted small">
-{{- if gt $pubd.Unix 0 }}
+	{{- if gt $pubd.Unix 0 }}
 								<time class="published-time" datetime="{{
 									time.Format "2006-01-02T15:04:05-07:00" $pubd }}">{{
 									time.Format ":date_long" $pubd }}</time>
-{{- end }}
-{{- if .Site.Params.readingTime }}
+	{{- end }}
+	{{- if .Site.Params.readingTime }}
 								| <span class="reading-time">{{ T "minute" .ReadingTime }}</span>
-{{- end }}
-{{- if .Site.Params.wordCount }}
+	{{- end }}
+	{{- if .Site.Params.wordCount }}
 								| <span class="word-count">{{ T "word" .WordCount }}</span>
-{{- end }}
-{{- range .Params.categories }}
+	{{- end }}
+	{{- range .Params.categories }}
 								| <span class="category">{{ replace . "-" " " |title }}</span>
-{{- end }}
+	{{- end }}
 							</div>
-{{- end }}
+{{- end -}}
+
 {{- if .IsTranslated }}
 							<div class="translations">
 								{{ T "translations" }}
@@ -25,4 +26,4 @@
 								<a class="translation" href="{{ .Permalink }}" lang="{{ .Lang }}">{{ default .Lang .Site.Language.LanguageName }}</a>
 	{{- end }}
 							</div>
-{{- end }}
+{{- end -}}

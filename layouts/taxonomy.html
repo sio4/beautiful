@@ -4,6 +4,12 @@
 	{{- $fmax := 50 }}
 				<article class="hugo-taxonomy beauty-tagcloud text-center">
 				{{- range .Pages.ByTitle }}
+					{{- if eq .Pages.Len 1 }}
+					<span style="white-space: nowrap" title="{{
+							.Title }} {{ .Pages.Len }}"><a href="{{
+							.RelPermalink }}">...</a></span>
+						{{ continue }}
+					{{ end }}
 					{{- $s := mul .Pages.Len 0.5 }}
 					{{- $s = add $s 0.5 }}
 					{{- $s = math.Log $s }}
@@ -13,7 +19,7 @@
 					{{- $w = add $w 200 }}
 					<span style="white-space: nowrap; font-size: {{ $s }}px{{
 						if ge $s 24 }}; font-weight: {{ $w }}{{
-						end }}" title="{{ .Pages.Len }}"><a href="{{
+						end }}" title="{{ .Title }} {{ .Pages.Len }}"><a href="{{
 							.RelPermalink }}">{{ .LinkTitle }}</a></span>
 				{{- end }}
 				</article>

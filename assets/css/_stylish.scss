@@ -27,3 +27,16 @@
 		margin-right: .5em;
 	}
 }
+
+.post-tags {
+	.post-tags-list {
+		.post-tag {
+			a {
+				&:before {
+					font-family: "Font Awesome 7 Free";
+					content: "#";
+				}
+			}
+		}
+	}
+}

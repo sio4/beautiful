@@ -1,9 +1,33 @@
-{{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
-{{ end }}
+{{- define "main" }}
+	{{- .Content }}
+	{{- $pages := where site.RegularPages "Type" "in" site.MainSections }}
+	{{- $paginator := .Paginate $pages.ByDate.Reverse }}
+	{{- range $paginator.Pages }}
+				<section class="beauty-post-preview py-3">
+					<a class="beauty-post-link" href="{{ .RelPermalink }}">
+						<h2 class="post-title mb-0 border-bottom">{{ .LinkTitle }}</h2>
+						<div class="post-subtitle fs-5 fw-light">{{ .Params.subtitle }}</div>
+						<div class="post-meta-ribbon">
+		{{- partial "page_meta.html" . }}
+						</div>
+
+		{{- with .Params.banner }}
+						<img class="post-banner my-2" src="{{ . }}">
+		{{- else }}
+			{{- $images := partial "_funcs/get-page-images" . }}
+			{{- range first 1 $images }}
+						<img class="post-banner my-2" src="{{ .Permalink }}">
+			{{- end }}
+		{{- end }}
+					</a>
+					<div class="post-summary">
+						{{ .Summary }}
+						{{- /*.Summary | plainify | htmlUnescape | strings.TrimSpace */}}
+					</div>
+					{{- partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+				</section>
+	{{- end }}
+				<div class="page-nav mt-5">
+	{{- partial "pagination.html" . }}
+				</div>
+{{- end }}
