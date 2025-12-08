@@ -176,7 +176,33 @@
 	--bs-form-invalid-border-color: #ea868f;
 }
 
+.pagination {
+	--bs-pagination-border-width: 0;
+	--bs-pagination-active-color: var(--bs-body-color);
+	--bs-pagination-active-border-color: var(--bs-link-color);
+	--bs-pagination-active-bg: transparent;
+	--bs-pagination-disabled-bg: transparent;
+}
+
+.navbar {
+	--bs-navbar-toggler-border-color: transparent;
+	--bs-navbar-toggler-focus-width: 0;
+}
+
+.dropdown-menu {
+	--bs-dropdown-border-width: 0;
+	--bs-dropdown-padding-x: 1rem;
+	--bs-dropdown-padding-y: 0;
+}
+
 /* --- workaround for bootstrap --- */
 img {
 	max-width: 100%;
+}
+
+// --- mobile ----------------------------------------------------------------
+@media only screen and (max-width: 767px) {
+	:root {
+		--bs-body-font-size: 15px;
+	}
 }

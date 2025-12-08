@@ -4,8 +4,8 @@ a {
 }
 
 img {
-  display: block;
-  margin: auto;
+	display: block;
+	margin: auto;
 }
 
 // --- navbar ----------------------------------------------------------------
@@ -147,14 +147,46 @@ img {
 
 // --- post preview ----------------------------------------------------------
 .beauty-post-preview {
-  a.beauty-post-link {
-	  --bs-link-color-rgb: var(--bs-body-color-rgb);
-	  &:hover {
-		  --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
-	  }
-    img {
-      max-height: 360px;
-      width: auto;
-    }
-  }
+	a.beauty-post-link {
+		--bs-link-color-rgb: var(--bs-body-color-rgb);
+		&:hover {
+			--bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+		}
+		img {
+			max-height: 360px;
+			width: auto;
+		}
+	}
+}
+
+// --- home ------------------------------------------------------------------
+.page-nav {
+	ul.pagination {
+		justify-content: center;
+	}
+}
+
+// --- mobile ----------------------------------------------------------------
+@media only screen and (max-width: 767px) {
+	.navbar {
+		padding: 0;
+	}
+	.avatar-container {
+		width: 50px;
+		margin-top: 50px;
+		.avatar-img-border a .avatar-img {
+			border-width: 3px !important;
+		}
+	}
+	.intro-header.big-img .beauty-header {
+		padding: 90px 0;
+		h1 {
+			font-size: 2.4rem;
+		}
+	}
+	.beauty-post-preview {
+		.post-subtitle {
+			font-size: 1.05rem !important;
+		}
+	}
 }
