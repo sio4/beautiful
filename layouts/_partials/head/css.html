@@ -1,3 +1,5 @@
+	<link rel="stylesheet" href="/css/syntax.css">
+
 {{- $options := dict "transpiler" "libsass" "targetPath" "css/main.css" -}}
 {{- with resources.Get "css/main.scss" | toCSS $options }}
 	{{- if hugo.IsDevelopment }}

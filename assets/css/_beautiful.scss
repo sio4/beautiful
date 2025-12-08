@@ -1,4 +1,9 @@
 // --- common default --------------------------------------------------------
+html {
+	scroll-padding-top: 70px; // 50 + some more
+	scroll-behavior: auto !important;
+}
+
 a {
 	text-decoration: var(--bs-link-decoration);
 }
@@ -155,6 +160,11 @@ img {
 		img {
 			max-height: 360px;
 			width: auto;
+		}
+	}
+	.post-summary {
+		a {
+			color: var(--bs-body-color-rgb);
 		}
 	}
 }

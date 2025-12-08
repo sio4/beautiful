@@ -2,5 +2,31 @@
 				<section class="beauty-content page-content">
 {{ .Content }}
 				</section>
-{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+
+				<section class="post-footer mt-5">
+					{{- with site.Params.signature }}
+					<div class="signature fst-italic">
+						<p>-- <br>{{ . | strings.TrimSpace }}</p>
+					</div>
+					{{- end }}
+{{- partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+					<div class="social-share">
+{{- partial "share.html" . }}
+					</div>
+					<div class="ending-comment">
+					</div>
+					<div>
+					</div>
+
+	{{- if or (in site.MainSections .Type) .Params.comments }}
+		{{- if .Site.Config.Services.Disqus.Shortname }}
+					<section class="comments">
+						<div class="disqus-comments">
+						{{- partial "disqus.html" . }}
+						</div>
+					</section>
+		{{- end }}
+	{{- end }}
+
+				</section>
 {{- end }}
