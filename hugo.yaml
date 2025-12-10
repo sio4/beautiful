@@ -1,5 +1,55 @@
 baseURL: https://example.org/
-languageCode: en-US
+#theme: beaufiful
+
+contentDir: content.example
+
+defaultContentLanguage: ko
+languages:
+  ko:
+    languageCode: ko-KR
+    languageName: Korean
+    weight: 1
+    title: 나의 새 휴고 사이트
+  en:
+    languageCode: en-US
+    languageName: English
+    weight: 2
+    title: My New Hugo Site
+
+params:
+  subtitle: Welcome to my world
+  description: >
+    your default site descption used for SEO things such as meta, og, etc.
+  signature: the signature at the bottom of all posts
+  logo: /images/logo.png
+  bigimg:
+    - src: /images/front-page-header-1.jpg
+      desc: Beautiful Hugo
+    - src: /images/front-page-header-2.jpg
+      desc: Lovely Beautiful Hugo
+  #since: 2020
+  readingTime: true
+  wordCount: true
+  author:
+    name: YOUR_NAME
+    github: YOUR_GITHUB_ID
+    stackoverflow: users/ID/NAME
+    linkedin: YOUR_LINKEDIN_ID
+    facebook: YOUR_FACEBOOK_ID
+
+#services:
+#  disqus:
+#    shortname: YOUR_SHORTNAME
+#  googleanalytics:
+#    id: YOUR_GOOGLE_ANALYTICS_ID
+
+pagination:
+  pagerSize: 3
+
+markup:
+  highlight:
+    noClasses: false
+
 menus:
   main:
   - name: Home
@@ -15,4 +65,3 @@ module:
   hugoVersion:
     extended: false
     min: 0.146.0
-title: My New Hugo Site

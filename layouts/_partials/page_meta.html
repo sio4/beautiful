@@ -1,10 +1,12 @@
 {{- if not .Params.suppressMeta }}
 	{{- $pubd := or .PublishDate .Date }}
 							<div class="page-meta text-muted small">
-	{{- if gt $pubd.Unix 0 }}
+	{{- if gt $pubd (time.AsTime "0001-01-01T00:00:00") }}
 								<time class="published-time" datetime="{{
 									time.Format "2006-01-02T15:04:05-07:00" $pubd }}">{{
 									time.Format ":date_long" $pubd }}</time>
+	{{- else }}
+								<span class="published-time">?</span>
 	{{- end }}
 	{{- if .Site.Params.readingTime }}
 								| <span class="reading-time">{{ T "minute" .ReadingTime }}</span>

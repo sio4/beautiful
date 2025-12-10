@@ -1,12 +1,31 @@
-+++
-title = 'Post 3'
-date = 2023-03-15T11:00:00-07:00
-draft = false
-tags = ['red','green','blue']
-+++
+---
+title: GNU 선언문
+date: 1985-03-01T11:00:00-07:00
+lastmod: 1998-10-08T00:00:00+09:00
+tags: [red,green,blue]
+---
 
-Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.
+> 저작권에 대한 본 사항이 명시되는 한, 상업적 이용을 포함할 수 있는 어떠한 정보 매체에 의한 본문의 전재나 발췌도 사전 승인 없이 무상으로 허용됩니다. 그러나 본문에 대한 수정과 첨삭은 허용되지 않습니다. GNU 선언문의 최종본은 1993년도에 발표된 현재의 문서이며, 향후 어떠한 수정도 없이 영구 보존문으로 남아있게 됩니다.
+>
+> GNU 선언문의 한국어 번역은 하재원님의 번역이 최초의 것이라고 생각됩니다. 이 번역문은 1993년도에 개정된 영어 원문의 내용이 포함되어 있지 않은 것으로 미루어 볼 때, 아마도 1980년대 후반에 번역되었을 것으로 추측됩니다.
+>
+> 1998년 후반부터 GNU 문서들을 체계적으로 번역하기 시작하던 중에 가장 핵심적인 문서인 GNU 선언문을 경신할 필요성을 느끼고 하재원님과 연락할 방법을 찾아보았으나, 상당한 시간과 노력에도 불구하고 결국 연락처를 찾지 못했습니다. 그러나 중복 작업이라는 소모적인 비효율성을 피하고 선행 작업의 노력과 성과를 가능한 그대로 유지하기 위해서 기존의 번역문에서 본질적인 내용 전달상의 오류가 포함된 최소한의 부분만을 수정하고 새롭게 추가된 내용을 덧붙이는 방식으로 개정문을 만든 것이 1998년 10월의 일입니다.
+>
+> 그후 많은 사람들의 요청에 따라 1차 개정문을 보다 깔끔한 형태로 다듬는 과정을 몇차례 거치게 되면서 현재의 번역문은 원역과 많이 다른 것이 되었습니다. 원역을 그대로 보존하지 못한 것이 못내 아쉽지만, 보다 많은 사람들에게 GNU 선언문의 내용이 알기 쉽게 읽혀질 수 있다면 원역자인 하재원님도 기꺼이 이해해 주실 것으로 생각합니다. 번역은 언어와 문화뿐 아니라 한 사람의 호흡을 옮기는 작업입니다. 번역문을 통해서도 이해되지 못한 부분이 있다면 리차드 스톨만의 호흡과 젊은 날의 고뇌가 서려 있는 원문을 읽어보실 것을 권해드립니다. 하재원님이 번역한 최초의 번역문은 이곳을 통해서 참고할 수 있습니다.
+
+
+## GNU란 무엇인가? Gnu는 유닉스가 아니다!
+
+GNU(그뉴)란 `GNU는 유닉스가 아니다'를 의미하는 영어 표현인 `Gnu is Not Unix'를 구성하는 단어들의 첫자를 따서 만든 약어이다. GNU는 유닉스와 완벽하게 호환되는 소프트웨어 시스템의 이름이며, 원하는 모든 사람이 자유롭게 사용할 수 있도록 만들어진 것이다. 몇몇 자원자들이 내게 도움을 주고 있지만 보다 많은 자원자들의 지원과 프로그램과 장비 그리고 금전적인 도움이 절실히 필요한 실정이다.
 
 ![Bryce Canyon National Park](bryce-canyon.jpg)
 
-Sit excepteur do velit veniam mollit in nostrud laboris incididunt ea. Amet eu cillum ut reprehenderit culpa aliquip labore laborum amet sit sit duis. Laborum id proident nostrud dolore laborum reprehenderit quis mollit nulla amet veniam officia id id. Aliquip in deserunt qui magna duis qui pariatur officia sunt deserunt.
+우리는 지금까지 에디터 명령어를 Lisp 언어로 작성할 수 있는 텍스트 에디터 Emacs(이맥스)와 소스 코드 단계까지 오류를 추적할 수 있는 디버거, yacc(약) 호환 파서 생성기, 링커 그리고 35개 가량의 유틸리티들을 만들었으며 셸은 거의 완성된 상태에 이르렀다. 이식성 있는 최적화 C 컴파일러가 컴파일러 자신을 통해 새로이 컴파일되어 만들어 졌으며 이번 해에 배포될 것이다. 초기 단계의 커널이 존재하기는 하지만 유닉스에 필적하기 위해서는 보다 많은 기능들이 추가되어야 한다. 커널과 컴파일러가 완성되면 프로그램 개발에 적합한 GNU 시스템을 배포할 수 있을 것이다. 우리는 조판 프로그램으로 TeX(텍)을 사용하겠지만, nroff(엔로프)도 계속 사용할 것이다. 또한 이식성을 갖춘 자유 소프트웨어인 X 윈도우 시스템도 사용할 것이다. 그런 후에 이식성을 확보한 Common Lisp과 Empire 게임, 스프레드시트를 포함한 수많은 다른 프로그램과 온라인 문서들을 추가할 것이다. 종국적으로 우리는 일반적인 유닉스 시스템에 포함된 모든 프로그램과 그 이상의 것들을 제공하게 되기를 희망한다.
+
+GNU는 유닉스 프로그램을 사용할 수 있게 해주지만 유닉스와 동일한 것은 아니다. 우리는 다른 운영체제에서의 경험을 살려 사용하기에 편리한 모든 향상을 꾀할 것이다. 특히, 긴 길이의 파일 이름과 파일 버전 번호 그리고 견고한 파일 시스템을 구현할 계획이며 가능하다면 파일명 완성 기능도 제공할 것이다. 또한 터미널에 독립적인 출력을 지원할 계획이며 최종적으로 몇 개의 Lisp 프로그램과 일반적인 유닉스 프로그램이 한 화면을 나누어 쓸 수 있는 Lisp 기반의 윈도우 시스템을 만들 것이다. 시스템 프로그래밍 언어로 C와 Lisp 두 가지를 모두 사용할 수 있을 것이다. 우리는 또한 통신을 위해 UUCP와 MIT Chaosnet 그리고 인터넷 프로토콜들을 지원해 나갈 것이다.
+
+GNU는 본래 가상 메모리를 가진 68000/16000 CPU 계열의 컴퓨터를 기준으로 제작되었다. 그 까닭은 이 기계들에서 GNU를 가장 쉽게 작동시킬 수 있기 때문이다. 보다 작은 컴퓨터에서 GNU를 작동시키기 위해서는 별도의 노력이 필요하며 이것은 그러한 시스템에서 GNU를 사용하고자 하는 사람의 몫으로 남겨져 있다.
+
+GNU 프로젝트를 말할 때는 'GNU'의 'G' 발음이 생략되어 "뉴 프로젝트"(new project)와 혼동되지 않도록, "그뉴 프로젝트"라고 명확히 발음해 주기를 부탁한다.
+
+[The GNU Manifesto](https://www.gnu.org/gnu/manifesto.html)

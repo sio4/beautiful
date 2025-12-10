@@ -1,10 +1,17 @@
-+++
-title = 'Post 2'
-date = 2023-02-15T10:00:00-07:00
-draft = false
-tags = ['red','green']
-+++
+---
+title: 대한민국 헌법
+date: 1987-10-29T00:00:00+09:00
+tags: [red,green]
+---
 
-Anim eiusmod irure incididunt sint cupidatat. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.
-
-Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.
+유구한 역사와 전통에 빛나는 우리 대한국민은 3ㆍ1운동으로 건립된
+대한민국임시정부의 법통과 불의에 항거한 4ㆍ19민주이념을 계승하고, 조국의
+민주개혁과 평화적 통일의 사명에 입각하여 정의ㆍ인도와 동포애로써 민족의
+단결을 공고히 하고, 모든 사회적 폐습과 불의를 타파하며, 자율과 조화를
+바탕으로 자유민주적 기본질서를 더욱 확고히 하여 정치ㆍ경제ㆍ사회ㆍ문화의
+모든 영역에 있어서 각인의 기회를 균등히 하고, 능력을 최고도로 발휘하게
+하며, 자유와 권리에 따르는 책임과 의무를 완수하게 하여, 안으로는 국민생활의
+균등한 향상을 기하고 밖으로는 항구적인 세계평화와 인류공영에 이바지함으로써
+우리들과 우리들의 자손의 안전과 자유와 행복을 영원히 확보할 것을 다짐하면서
+1948년 7월 12일에 제정되고 8차에 걸쳐 개정된 헌법을 이제 국회의 의결을 거쳐
+국민투표에 의하여 개정한다.
