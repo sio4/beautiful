@@ -1,0 +1,2 @@
+{{ $s := index .Params 0 }}
+{{- partial "series.html" (dict "page" .Page "series" $s) -}}

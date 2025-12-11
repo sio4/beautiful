@@ -5,3 +5,5 @@ word:
   one: "{{ . }} word"
   other: "{{ . }} words"
 translations: "Translations:"
+see-also: "See Also"
+same-series: "The following are from the \"{{ . }}\" series:"

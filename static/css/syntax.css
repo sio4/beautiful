@@ -56,7 +56,7 @@
 /* CommentPreprocFile */ .chroma .cpf { color:#fd8f3f }
 
 /* missing in xcode-dark, mixed with the classes from the github-dark */
-/* NameConstant */ .chroma .no { color:#79c0ff;font-weight:bold }
+/* NameConstant */ .chroma .no { color:#79c0ff;font-weight:normal }
 /* NameDecorator */ .chroma .nd { color:#d2a8ff;font-weight:bold }
 /* NameEntity */ .chroma .ni { color:#ffa657 }
 /* NameException */ .chroma .ne { color:#f0883e;font-weight:bold }

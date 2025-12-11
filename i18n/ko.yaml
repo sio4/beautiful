@@ -5,3 +5,5 @@ word:
   one: "{{ . }} 단어"
   other: "{{ . }} 단어"
 translations: "다른 언어:"
+see-also: "함께 읽기"
+same-series: "\"{{ . }}\" 묶음글은 다음과 같습니다."

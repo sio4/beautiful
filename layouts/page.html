@@ -8,6 +8,14 @@
 					</article>
 {{- end }}
 {{ .Content }}
+
+{{- if .Params.series }}
+					<hr class="mt-5 w-50 dashed">
+					<div class="see-also">
+						<h3 id="see-also">{{ T "see-also" }}</h3>
+{{- partial "series.html" (dict "page" .) }}
+					</div>
+{{- end }}
 				</section>
 
 				<section class="post-footer mt-5">
