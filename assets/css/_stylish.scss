@@ -1,35 +1,3 @@
-//$color-text: #404040;
-//$color-light: #cccccc;
-
-/**
-$font-head: 'Open Sans','NanumSquare','Helvetica Neue',sans-serif;
-$font-norm: 'Open Sans','Noto Sans KR','Helvetica Neue',sans-serif;
-$font-meta: 'Open Sans','Noto Sans KR','Helvetica Neue',sans-serif;
-$font-type: Monaco, "Ubuntu Mono", "Courier New", monospace !important;
-$font-head-weight: 800; // 800 for NanumBarunGothic/NanumSquare, 700 for Noto
-$font-thin-weight: 200;
-
-$color-dark: #202020;
-$color-grey: #aaaaaa;
-$color-link: #0075aa;
-$color-cool: skyblue;
-$color-header: #ffffff;
-$color-footer: #505050;
-$color-comment: #a09090;
-
-$background-body: #f9f9f9;
-$background-box: #fbfbfb;
-$background-black: #111111;
-$background-header: #000000;
-$background-footer: #f5f5f5;
-$background-point: #454545;
-
-$background-styled: linear-gradient(#eeeeee 0%, #ffffff 40%, #ffffff 60%, #eeeeee 100%);
-$background-th: #eeeeee;
-$background-td: #ffffff;
-$color-border: $color-light;
-**/
-
 // --- variables -------------------------------------------------------------
 :root,
 [data-bs-theme=light] {
@@ -269,24 +237,35 @@ $color-border: $color-light;
 }
 
 // --- common modifiers ------------------------------------------------------
-.bordered {
-	border: 1px solid var(--bh-border-color);
-}
-.dropshadow {
-	box-shadow: var(--bh-box-shadow);
-}
-
+.bordered { border: 1px solid var(--bh-border-color); }
+.dropshadow { box-shadow: var(--bh-box-shadow); }
 .inline-badges {
 	line-height: 0;
-	a {
-		display: inline-block;
-	}
+	a { display: inline-block; }
 }
-
 p.caption {
 	font-size: 0.8rem;
 	text-align: center;
 }
+
+// .onethird { max-width: 33% !important; display: block; }
+// .twothird { max-width: 66% !important; display: block; }
+// .half		 { max-width: 50% !important; display: block; }
+// .filled { width: 100%; }
+// .mix-margin {
+//	margin: 0.5rem 2rem !important;
+//	&.pull-right { margin-right: 0 !important; }
+//	&.pull-left { margin-left: 0 !important; }
+// }
+// .mix-boxed {
+//	border: 1px solid $color-light;
+//	padding: 2px 8px;
+//	&.mix-round { border-radius: 8px; }
+// }
+// .mix-large { font-size: 1.2em; }
+// .mix-xlarge { font-size: 1.4em; }
+// .mix-xxlarge { font-size: 1.6em; }
+// .mix-xxxlarge { font-size: 1.8em; }
 
 // --- page_meta -------------------------------------------------------------
 .page-meta {
@@ -344,442 +323,19 @@ p.caption {
 }
 
 // --- mobile ----------------------------------------------------------------
-
-
-// --- general ---------------------------------------------------------------
-/**
-em {
-	color: $color-dark;
-	font-weight: normal;
-}
-**/
-
-
-// --- my widgets ------------------------------------------------------------
-/*
-div.barchart {
-	.chart-item {
-		margin-bottom: 2px;
-		clear: both;
-		.chart-item-bar {
-			display: inline-block;
-			vertical-align: middle;
-			border: 1px solid lighten($color-grey, 20%);
-			border-radius: 3px;
-			padding: 2px;
-			.bar {
-				float: right;
-				width: 100px;
-				height: 0.6em;
-				background: #0075aa;
-				border-radius: 2px;
-			}
-		}
-		.chart-item-label {
-			color: $color-grey;
-			line-height: 1.2;
-			padding: 0 0 0 6px;
-		}
-	}
-}
-
-#markdown-toc {
-	margin: 0.5rem 2rem;
-	padding: 0.5rem 1rem;
-	background: #f9f9f9;
-	border-radius: 0.5rem;
-	li {
-		list-style: none;
-	}
-	ul {
-		padding-left: 1.5em;
-	}
-	&.pull-right {
-		margin-right: 0;
-		min-width: 40%;
-	}
-}
 @media only screen and (max-width: 767px) {
-	#markdown-toc {
-		&.pull-right {
-			float: none !important;
-			margin-right: 2rem;
-			max-width: 100% !important;
-		}
-	}
 }
-*/
-
-// --- common modifier -------------------------------------------------------
-/**
-.onethird { max-width: 33% !important; display: block; }
-.twothird { max-width: 66% !important; display: block; }
-.half		 { max-width: 50% !important; display: block; }
-
-.mix-margin {
-	margin: 0.5rem 2rem !important;
-	&.pull-right {
-		margin-right: 0 !important;
-	}
-	&.pull-left {
-		margin-left: 0 !important;
-	}
-}
-.mix-boxed {
-	border: 1px solid $color-light;
-	padding: 2px 8px;
-	&.mix-round {
-		border-radius: 8px;
-	}
-}
-.mix-large { font-size: 1.2em; }
-.mix-xlarge { font-size: 1.4em; }
-.mix-xxlarge { font-size: 1.6em; }
-.mix-xxxlarge { font-size: 1.8em; }
-
-.block-title {
-	font-size: 0.9em;
-	background: darken($background-body, 3%);
-	padding-left: 3em;
-	&:before {
-		content: "\f14a"; // square-check
-		font-family: FontAwesome;
-		display: inline-block;
-		margin-left: -2.5em;
-		width: 1.5em;
-	}
-}
-
-**/
-
-/*
-.fit svg, .fit {
-	display: block;
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-.filled { width: 100%; }
-*/
-
-// ---------------------------------------------------------------------------
-// --- override bootstrap/theme default --------------------------------------
-//
-// --- navbar ----------------------------------------------------------------
-/**
-
-// --- post header -----------------------------------------------------------
-.intro-header {
-	&.big-img { // homepage
-		color: $color-header;
-		.page-heading {
-			h1 {
-				font-size: 3.0em;
-				text-shadow: 2px 2px 2px $color-dark;
-			}
-			hr.small {
-				color: darken($color-header, 15%);
-				box-shadow: 1px 1px 2px $color-dark;
-			}
-		}
-	}
-
-	.categories-heading, .tags-heading,
-	.projects-heading, .page-heading, .blog-heading, .post-heading { // common
-		h1 {
-			margin-top: 20px;
-			text-shadow: 2px 2px 2px $color-grey;
-		}
-		hr.small {
-			color: lighten($color-text, 10%);
-			box-shadow: 1px 1px 2px $color-grey;
-		}
-		.projects-subheading, .page-subheading,
-		.blog-subheading, .post-subheading {
-			font-size: 1.4em;
-			font-family: $font-norm;
-			font-weight: $font-thin-weight;
-		}
-	}
-
-	.categories-heading, .tags-heading,
-	.projects-heading, .page-heading {
-		text-align: center;
-		h1 {
-			font-size: 2.5em;
-		}
-		.projects-subheading, .page-subheading {
-			margin-top: 20px;
-		}
-	}
-
-	.blog-heading, .post-heading { // articles
-		h1 {
-			font-size: 2.0em;
-			border-bottom: 1px solid $color-grey;
-			padding-bottom: 4px;
-		}
-		hr.small {
-			display: none;
-		}
-		.blog-subheading, .post-subheading {
-			margin-top: 10px;
-		}
-		.post-meta {
-			font-size: 0.9em;
-			color: $color-grey;
-		}
-	}
-}
-
-// --- post preview ----------------------------------------------------------
-.post-preview {
-	font-family: $font-norm;
-	a {
-		color: $color-text;
-		.post-title {
-			padding: 2px 0;
-			border-bottom: 1px solid $color-light;
-		}
-		.post-subtitle { }
-		.img-title {
-			max-height: 360px;
-			width: auto;
-		}
-	}
-	.post-meta {
-		font-family: $font-meta;
-		font-size: 0.9em;
-	}
-	.post-entry {
-		font-family: $font-norm;
-		text-align: justify;
-	}
-	.blog-tags { } // --> .blog-tags
-}
-
-// --- post body -------------------------------------------------------------
-article.blog-page,
-article.blog-post {
-	font-family: $font-norm;
-	font-size: 16px;
-
-	h1, h2, h3, h4, h5 {
-		margin-top: 2em;
-	}
-
-	h2 {
-		padding: 4px 0;
-		border-bottom: 1px solid $color-light;
-	}
-
-	p {
-		line-height: 1.8;
-		text-align: justify;
-		margin: 1.2em 0;
-		word-break: keep-all;
-		&:first-of-type {
-			margin-top: 0;
-		}
-
-		a {
-			color: $color-link;
-		}
-	}
-
-
-}
-**/
-
-/*
-	.post-repository { //** for project page
-		margin: 5px 0 !important;
-		font-weight: $font-head-weight;
-		a {
-			color: $color-link;
-		}
-	}
-*/
-
-// --- post body > bottom: tags, pager ---------------------------------------
-/**
-.blog-tags {
-	clear: both;
-	text-align: right;
-	font-family: $font-norm;
-	a {
-		color: $color-link;
-
-		&:hover {
-			border-radius: 2px;
-			color: #008AFF;
-			background-color: #CCC;
-		}
-	}
-}
-
-.pager .previous > a,
-.pager .next > a {
-	font-size: 1em;
-	color: $color-link;
-	background: inherit;
-	border: 1px solid transparent;
-}
-.pager .previous > a {
-	padding-left: 0;
-}
-.pager .next > a {
-	padding-right: 0;
-}
-
-// --- post list (categories, tags) ------------------------------------------
-.panel-group {
-	.panel {
-		background: $background-body;
-		a.list-group-item {
-			font-family: $font-norm;
-			font-weight: inherit;
-			background: $background-body;
-		}
-	}
-}
-
-// --- footer ----------------------------------------------------------------
-footer {
-	background: $background-footer;
-	background-image: url(/images/orion.png);
-	background-position: right bottom;
-	background-repeat: no-repeat;
-	background-size: auto 120px;
-
-	a {
-		color: $color-footer;
-	}
-}
-
-// --- syntax highlight ------------------------------------------------------
-//@import url("syntax.css");
-pre.chroma { // theme github-dark
-	color: #e6edf3;
-	background-color: #0d1117;
-}
-**/
-
-
 
 // --- for printing ----------------------------------------------------------
-/*
-img {
-	page-break-inside: avoid !important;
-}
-*/
-
-// ---------------------------------------------------------------------------
-// --- for mobile ------------------------------------------------------------
-/**
-@media only screen and (max-width: 767px) {
-body {
-	font-size: 15px;
-}
-
-// --- navbar --------------------------
-.navbar-custom {
-	.navbar-toggle {
-		border-color: transparent;
-		&:focus, &:hover {
-			background-color: transparent;
-		}
-	}
-}
-
-// --- post header ---------------------
-.intro-header {
-	&.big-img { // homepage
-		.page-heading {
-			h1 { font-size: 2.4em; }
-		}
-	}
-
-	.categories-heading, .tags-heading,
-	.projects-heading, .page-heading, .blog-heading, .post-heading { // common
-		.projects-subheading, .page-subheading,
-		.blog-subheading, .post-subheading {
-			font-size: 1.2em;
-		}
-	}
-
-	.categories-heading, .tags-heading,
-	.projects-heading, .page-heading {
-		h1 { font-size: 2.0em; }
-	}
-
-	.blog-heading, .post-heading { // articles
-		h1 { font-size: 1.6em; }
-	}
-}
-
-// --- post preview --------------------
-.post-preview {
-	a {
-		.post-title { font-size: 1.6em; }
-		.post-subtitle { font-size: 1.2em; }
-	}
-}
-
-// --- post body -----------------------
-article.blog-page,
-article.blog-post {
-	h1 { font-size: 1.8em; }
-	h2 { font-size: 1.6em; }
-	h3 { font-size: 1.4em; }
-	h4 { font-size: 1.2em; }
-	h5 { font-size: 1.0em; }
-
-	p {
-		line-height: 1.6;
-		word-break: normal; // can break within a word
-	}
-}
-
-// --- footer --------------------------
-footer { font-size: 0.8em; }
-
-} // --- end of mobile -------------------------------------------------------
-**/
-
-// --- for printing ----------------------------------------------------------
-/*
 @media print {
-	body {
-		font-size: 16pt;
-	}
-	.intro-header {
-		margin: 40px 0;
-	}
-	#markdown-toc {
+	img {
+		max-height: 70vh;
+		max-width: 90% !important;
 		page-break-inside: avoid !important;
-		border: 1px solid #ccc;
-		border-radius: 4px;
 	}
 	pre code {
 		white-space: pre-wrap; word-break: break-all;
 	}
-	.post-meta a[href]:after,
-	.post-tags a[href]:after {
-		content: none !important;
-	}
-	.print-footer {
-		border-top: 1px solid #ccc;
-	}
-	img {
-		max-height: 70vh;
-		max-width: 90% !important;
-	}
-	blockquote {
-		padding: 10px 15px;
-		border: 4px solid #ccc;
-		border-radius: 10px;
-	}
 }
-*/
 
 // vim: set noexpandtab:
