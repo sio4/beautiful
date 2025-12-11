@@ -11,6 +11,17 @@
 	<div class="container-xl beauty-container">
 		<div class="row beauty-row justify-content-center">
 			<div class="beauty-col col-xl-8 col-lg-9 col-md-11">
+{{- if site.Params.googleTranslate }}
+				<div id="google_translate_element"></div>
+				<script type="text/javaScript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+				<script type="text/javaScript">
+					function googleTranslateElementInit() {
+						new google.translate.TranslateElement({ pageLanguage: '{{ site.Language.Lang }}'},
+							'google_translate_element');
+					}
+				</script>
+{{- end }}
+
 {{- block "main" . }}{{ end }}
 			</div>
 		</div>

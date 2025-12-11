@@ -132,6 +132,15 @@ $color-border: $color-light;
 				font-family: "Font Awesome 7 Free"; margin-left: -30px; float: left;
 			}
 		}
+		&:has(input) {	// task list
+			padding-left: 0;
+			li {
+				list-style: none;
+				input {
+					width: 32px;
+				}
+			}
+		}
 	}
 
 	dl {
@@ -317,6 +326,18 @@ p.caption {
 					font-family: "Font Awesome 7 Free";
 					content: "#";
 				}
+			}
+		}
+	}
+}
+
+// --- google translation gadget integration ---------------------------------
+#google_translate_element {
+	div.goog-te-gadget {
+		text-align: right;
+		span {
+			img {
+				display: inline-block;
 			}
 		}
 	}

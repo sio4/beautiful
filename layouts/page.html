@@ -1,5 +1,12 @@
 {{- define "main" }}
 				<section class="beauty-content page-content">
+{{- with .Params.repository }}
+					<article class="project-info">
+						<blockquote class="boxed"><ul class="nodot ps-0">
+							<li><i class="fa-solid fa-laptop-code me-3"></i> <a href="{{ . }}" class="">{{ . }}</a></li>
+						</ul></blockquote>
+					</article>
+{{- end }}
 {{ .Content }}
 				</section>
 

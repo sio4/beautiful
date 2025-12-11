@@ -30,6 +30,7 @@ params:
   #since: 2020
   readingTime: true
   wordCount: true
+  googleTranslate: false
   author:
     name: YOUR_NAME
     github: YOUR_GITHUB_ID
