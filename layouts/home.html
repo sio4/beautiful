@@ -1,7 +1,7 @@
 {{- define "main" }}
 	{{- .Content }}
 	{{- $pages := where site.RegularPages "Type" "in" site.MainSections }}
-	{{- $paginator := .Paginate $pages.ByDate.Reverse }}
+	{{- $paginator := .Paginate $pages.ByPublishDate.Reverse }}
 	{{- range $paginator.Pages }}
 				<section class="beauty-post-preview py-3">
 					<a class="beauty-post-link" href="{{ .RelPermalink }}">

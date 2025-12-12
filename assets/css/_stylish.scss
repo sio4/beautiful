@@ -17,18 +17,18 @@
 // --- post/page content -----------------------------------------------------
 .post-summary,
 .page-content {
-	h1, h2 { margin-top: 2.0em; }
-	h3, h4 { margin-top: 1.5em; }
-	h5, h6 { margin-top: 1.0em; }
+	h1, h2 { margin: 2.0em 0 1rem; }
+	h3, h4 { margin: 1.5em 0 1rem; }
+	h5, h6 { margin: 1.0em 0 1rem; }
 
 	p {
-		margin: 1rem 0;
+		margin-bottom: 1rem;
 		text-align: justify;
 	}
 
 	img {
 		max-width: 95%;
-		margin: 1rem auto;
+		margin: 0 auto 1rem;
 	}
 
 	blockquote {
@@ -115,7 +115,7 @@
 		dd { padding-left: 2rem; }
 
 		&.help, &.info, &.warn, &.keypoint, &.point {
-			margin: 1.5em 0;
+			margin: 1.5em 0; // checkme
 			dt {
 				color: var(--bh-accent);
 				font-weight: bold;
@@ -152,7 +152,7 @@
 	}
 
 	.highlight {
-		margin: 1em;
+		margin: 0 1rem 1rem;
 		pre {
 			padding: 0.5em;
 			font-size: 0.8rem;
@@ -169,7 +169,7 @@
 
 	table {
 		font-size: 0.9rem;
-		margin: 1rem auto;
+		margin: 0 auto 1rem;
 		max-width: 95%;
 		min-width: 60%;
 
@@ -187,7 +187,7 @@
 			background: rgba(var(--bs-tertiary-bg-rgb), .6);
 		}
 
-		&.fit { width: 95%; margin: 1rem auto; }
+		&.fit { width: 95%; }
 		&.filled { width: 100%; }
 		&.borderless {
 			thead tr, tbody tr {
@@ -230,9 +230,19 @@
 		ol {
 			padding: 0 0 0 1.5em;
 			p {
-				margin: .5em 0;
+				margin: 0 0 .5em;
 			}
 		}
+	}
+
+	// --- extra ---
+	.block-title-10,
+	.block-title {
+		margin: 0.3rem 1rem 0;
+		padding: 0.2rem 0.5rem;
+		line-height: 1;
+		border-left: 0.5rem solid var(--bs-border-color);
+		background: var(--bs-tertiary-bg);
 	}
 }
 

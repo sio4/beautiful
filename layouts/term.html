@@ -1,7 +1,7 @@
 {{- define "main" }}
 				<article class="postcards-short">
 				{{- .Content }}
-				{{- range .Pages }}
+				{{- range .Pages.ByPublishDate.Reverse }}
 					<article class="postcard-short mb-3">
 						<h5 class="m-0"><a href="{{
 								.RelPermalink }}">{{
