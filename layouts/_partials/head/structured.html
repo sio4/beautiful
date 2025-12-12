@@ -1,147 +1,184 @@
 {{- with site.Data.scheme.website }}
 	<script type="application/ld+json">
-		{{ . }}
+{{ . }}
 	</script>
 {{- else }}
 	<script type="application/ld+json">
-	{
-		"@context": "http://schema.org",
-		"@type": "WebSite",
-		"name": {{ site.Title }},
-		"url": {{ site.BaseURL }}
-	}
+{
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"url": {{ site.BaseURL }},
+	"name": {{ site.Title }}
+}
 	</script>
 {{- end }}
 
 {{- with site.Data.scheme.organization }}
 	<script type="application/ld+json">
-		{{ . }}
+{{ . }}
 	</script>
 {{- else }}
 	<script type=application/ld+json>
-	{
-		"@context":"http://schema.org",
-		"@type":"Organization",
-		"name": {{ site.Title }},
-		"url": {{ site.BaseURL }}
-	}
+{
+	"@context":"https://schema.org",
+	"@type":"Organization",
+	"url": {{ site.BaseURL }},
+	"name": {{ site.Title }}
+}
 	</script>
 {{- end }}
 
 {{- if .IsPage }}
 	{{- with site.Data.scheme.author }}
 	<script type="application/ld+json">
-		{{ . }}
+{{ . }}
 	</script>
 	{{- end }}
 
 	{{- $description := or .Description .Summary site.Params.description | plainify | htmlUnescape | truncate 500 }}
 	<script type=application/ld+json>
-	{
-		"@context": "http://schema.org",
-		"@type": "BlogPosting",
-		"publisher":{
-			"@type":"Organization",
-			"name": {{ site.Title }},
-			"logo": {
-				"@type": "ImageObject",
-				"url": {{ absURL site.Params.logo }}
-			}
-		},
-		"author": [{
-			"@type": "Person",
-			"name": {{ or .Params.author.name site.Params.author.name }},
-			"url": {{ or .Params.author.url site.Params.author.url }}
-		}],
-		"headline": {{ .Title }},
-		"description": {{ trim $description "\n\r\t " }},
-		"inLanguage": {{ site.Language.Lang }},
-		"wordCount": {{ .WordCount }},
-		"datePublished": {{ .PublishDate }},
-		"dateModified": {{ .Lastmod }},
-		{{- $images := partial "_funcs/get-page-images" . }}
-		"image": [
-		{{- range first 1 $images }}
-			{{ absURL .Permalink }}
-		{{- end}}
-		],
-		"keywords": {{ .Params.Tags }},
-		"mainEntityOfPage": {{ .Permalink }}
-	}
+{
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	"@id": {{ .Permalink }},
+	"url": {{ .Permalink }},
+	"mainEntityOfPage": {{ .Permalink }},
+	"name": {{ .Title }},
+	"headline": {{ .Title }},
+	"description": {{ trim $description "\n\r\t " }},
+	"datePublished": {{ .PublishDate }},
+	"dateModified": {{ .Lastmod }},
+	"inLanguage": {{ site.Language.Lang }},
+	"wordCount": {{ .WordCount }},
+	"publisher":{
+		"@type": "Organization",
+		"@id": {{ site.BaseURL }},
+		"url": {{ site.BaseURL }},
+		"name": {{ site.Title }},
+		"logo": {
+			"@type": "ImageObject",
+			"url": {{ absURL site.Params.logo }}
+		}
+	},
+	"author": [{
+		"@type": "Person",
+		"@id": {{ or .Params.author.url site.Params.author.url }},
+		"url": {{ or .Params.author.url site.Params.author.url }},
+		"name": {{ or .Params.author.name site.Params.author.name }}
+	}],
+	{{- $images := partial "_funcs/get-page-images" . }}
+	"image": [
+	{{- range first 1 $images }}
+		{{ absURL .Permalink }}
+	{{- end}}
+	],
+	"keywords": {{ .Params.Tags }}
+}
 	</script>
 {{- end }}
 	<script type="application/ld+json">
-	[
-	{{- range .GetTerms "categories" -}}
-	{
-		"@context": "https://schema.org",
-		"@type": "BreadcrumbList",
-		"itemListElement": [{
-			"@type": "ListItem",
-			"position": 1,
-			"name": "Categories",
-			"item": {{ absURL "/categories/" }}
-		},{
-			"@type": "ListItem",
-			"position": 2,
-			"name": "{{ .LinkTitle }}",
-			"item": {{ .Permalink }}
-		},{
-			"@type": "ListItem",
-			"position": 3,
-			"name": "{{ $.Title }}"
-		}]
-	},
-	{{- end -}}
-	{{- range .GetTerms "tags" -}}
-	{
-		"@context": "https://schema.org",
-		"@type": "BreadcrumbList",
-		"itemListElement": [{
-			"@type": "ListItem",
-			"position": 1,
-			"name": "Tags",
-			"item": {{ absURL "/tags/" }}
-		},{
-			"@type": "ListItem",
-			"position": 2,
-			"name": "{{ .LinkTitle }}",
-			"item": {{ .Permalink }}
-		},{
-			"@type": "ListItem",
-			"position": 3,
-			"name": "{{ $.Title }}"
-		}]
-	},
-	{{- end -}}
-	{
-		"@context": "https://schema.org",
-		"@type": "BreadcrumbList",
-		"itemListElement": [
-		{{- $num := 1 }}
-		{{- $path := "/" }}
-		{{- range (split (trim (replace .RelPermalink "/" " ") " ") " ") }}
-			{{- if . }}
-				{{- $path = add $path . "/" }}
-			{{- end }}
-			{{- $c := site.GetPage $path }}
-			{{- if eq $path $.RelPermalink -}}
-		{
-			"@type": "ListItem",
-			"position":{{ $num }},
-			"name": {{ or $.LinkTitle site.Title }},
-			"item": {{ $.Permalink }}
-		}
-			{{- else -}}
-		{
-			"@type": "ListItem",
-			"position":{{ $num }},
-			"name": {{ $c.LinkTitle }},
-			"item": {{ $c.Permalink }}
-		},
-			{{- end -}}
-			{{- $num = add $num 1 }}
-		{{- end -}}
-		]
+[
+{{- range .GetTerms "categories" -}}
+{
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [{
+		"@type": "ListItem",
+		"position": 1,
+		"name": {{ site.Title }},
+		"item": {{ site.BaseURL }}
+	},{
+		"@type": "ListItem",
+		"position": 2,
+		"name": "{{ $.Title }}",
+		"item": {{ $.Permalink }}
 	}]
+},{
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [{
+		"@type": "ListItem",
+		"position": 1,
+		"name": {{ site.Title }},
+		"item": {{ site.BaseURL }}
+	},{
+		"@type": "ListItem",
+		"position": 2,
+		"name": "Categories",
+		"item": {{ absURL "/categories/" }}
+	},{
+		"@type": "ListItem",
+		"position": 3,
+		"name": "{{ .LinkTitle }}",
+		"item": {{ .Permalink }}
+	},{
+		"@type": "ListItem",
+		"position": 4,
+		"name": "{{ $.Title }}",
+		"item": {{ $.Permalink }}
+	}]
+},
+{{- end -}}
+{{- range .GetTerms "tags" -}}
+{
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [{
+		"@type": "ListItem",
+		"position": 1,
+		"name": {{ site.Title }},
+		"item": {{ site.BaseURL }}
+	},{
+		"@type": "ListItem",
+		"position": 2,
+		"name": "Tags",
+		"item": {{ absURL "/tags/" }}
+	},{
+		"@type": "ListItem",
+		"position": 3,
+		"name": "{{ .LinkTitle }}",
+		"item": {{ .Permalink }}
+	},{
+		"@type": "ListItem",
+		"position": 4,
+		"name": "{{ $.Title }}",
+		"item": {{ $.Permalink }}
+	}]
+},
+{{- end -}}
+{
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [{
+		"@type": "ListItem",
+		"position": 1,
+		"name": {{ site.Title }},
+		"item": {{ site.BaseURL }}
+	},
+	{{- $num := 2 }}
+	{{- $path := "/" }}
+	{{- range (split (trim (replace .RelPermalink "/" " ") " ") " ") }}
+		{{- if . }}
+			{{- $path = add $path . "/" }}
+		{{- end }}
+		{{- $c := site.GetPage $path }}
+		{{- if eq $path $.RelPermalink -}}
+	{
+		"@type": "ListItem",
+		"position":{{ $num }},
+		"name": {{ or $.LinkTitle site.Title }},
+		"item": {{ $.Permalink }}
+	}
+		{{- else -}}
+	{
+		"@type": "ListItem",
+		"position":{{ $num }},
+		"name": {{ $c.LinkTitle }},
+		"item": {{ $c.Permalink }}
+	},
+		{{- end -}}
+		{{- $num = add $num 1 }}
+	{{- end -}}
+	]
+}]
 	</script>
