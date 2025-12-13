@@ -1,0 +1,10 @@
+						<p>{{ .message }}</p>
+						<ul class="angle">
+						{{- range .pages }}
+							{{- if eq .Path $.page.Path }}
+							<li class="current">{{ .LinkTitle }}</li>
+							{{- else }}
+							<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+							{{- end }}
+						{{- end }}
+						</ul>{{/* */ -}}

@@ -9,11 +9,28 @@
 {{- end }}
 {{ .Content }}
 
-{{- if .Params.series }}
+{{- if or .Params.series .Params.categories }}
 					<hr class="mt-5 w-50 dashed">
 					<div class="see-also">
 						<h3 id="see-also">{{ T "see-also" }}</h3>
-{{- partial "series.html" (dict "page" .) }}
+	{{- if .Params.series }}
+		{{- partial "seealso.html" (dict
+			"message" (T "same-series" .Params.series)
+			"page" .
+			"pages" (where site.Pages ".Params.series" .Params.series).ByPublishDate
+		) }}
+	{{- else if not site.Params.enableNewInCategory }}
+		{{- partial "seealso.html" (dict
+			"message" (T "same-category" (title (index .Params.categories 0)))
+			"pages" (
+				first 5 (
+					complement (slice .) (
+						where site.Pages ".Params.categories" "intersect" .Params.categories
+					)
+				)
+			)
+		) }}
+	{{- end }}
 					</div>
 {{- end }}
 				</section>
