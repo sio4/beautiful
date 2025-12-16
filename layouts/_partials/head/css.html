@@ -1,5 +1,9 @@
 	<link rel="stylesheet" href="/css/syntax.css">
 
+{{- if site.Params.usePagefind }}
+	<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+{{- end }}
+
 {{- $options := dict "transpiler" "libsass" "targetPath" "css/main.css" -}}
 {{- with resources.Get "css/main.scss" | toCSS $options }}
 	{{- if hugo.IsDevelopment }}

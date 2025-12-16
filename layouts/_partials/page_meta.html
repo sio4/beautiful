@@ -1,4 +1,4 @@
-{{- if not .Params.suppressMeta }}
+{{- if (or .Params.page_meta (ne .Type "page")) }}
 	{{- $pubd := or .PublishDate .Date }}
 							<div class="page-meta text-muted small">
 	{{- if gt $pubd (time.AsTime "0001-01-01T00:00:00") }}

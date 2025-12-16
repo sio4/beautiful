@@ -1,5 +1,5 @@
 {{- define "main" }}
-				<section class="beauty-content page-content">
+				<section class="beauty-content page-content" data-pagefind-body>
 {{- with .Params.repository }}
 					<article class="project-info">
 						<blockquote class="boxed"><ul class="nodot ps-0">
@@ -8,7 +8,9 @@
 					</article>
 {{- end }}
 {{ .Content }}
+				</section>
 
+				<section class="beauty-content page-content">
 {{- if or .Params.series .Params.categories }}
 					<hr class="mt-5 w-50 dashed">
 					<div class="see-also">
