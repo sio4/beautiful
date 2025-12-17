@@ -22,6 +22,7 @@ params:
     your default site descption used for SEO things such as meta, og, etc.
   signature: the signature at the bottom of all posts
   logo: /images/logo.png
+  favicon: /favicon.ico
   bigimg:
     - src: /images/front-page-header-1.jpg
       desc: Beautiful Hugo

@@ -7,6 +7,11 @@
 	<meta name="content-language" content="{{ site.Language.Lang }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+{{- with site.Params.favicon }}
+	<link rel="icon" href="{{ . }}">
+{{- else }}
+	<link rel="icon" href="/favicon.ico">
+{{- end }}
 {{ partial "head/meta" . }}
 {{ partial "head/structured" . }}
 {{ partial "opengraph" . }}
