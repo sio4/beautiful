@@ -35,6 +35,7 @@ params:
   googleTranslate: false
   usePagefind: true
   notFoundTo: /search/
+  hideTagLessThan: 1
   author:
     name: YOUR_NAME
     github: YOUR_GITHUB_ID

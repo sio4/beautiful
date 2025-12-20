@@ -29,7 +29,7 @@
 {{- end }}
 
 {{- if $title }}
-	<header class="header-section {{ if $bigimg }}has-img{{ end }} mb-4">
+	<header class="header-section {{ if $bigimg }}has-img{{ end }} mb-4" data-pagefind-body>
 		{{- if $bigimg }}
 		<div class="intro-header big-img" style="background-image: url('{{$firstimg.src}}');">
 		{{- else }}

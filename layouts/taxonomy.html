@@ -4,10 +4,10 @@
 	{{- $fmax := 50 }}
 				<article class="hugo-taxonomy beauty-tagcloud text-center">
 				{{- range .Pages.ByTitle }}
-					{{- if eq .Pages.Len 1 }}
+					{{- if le .Pages.Len site.Params.hideTagLessThan }}
 					<span style="white-space: nowrap" title="{{
 							.Title }} {{ .Pages.Len }}"><a href="{{
-							.RelPermalink }}">...</a></span>
+							.RelPermalink }}" class="text-muted">&middot;</a></span>
 						{{ continue }}
 					{{ end }}
 					{{- $s := mul .Pages.Len 0.5 }}

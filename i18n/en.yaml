@@ -4,6 +4,7 @@ minute:
 word:
   one: "{{ . }} word"
   other: "{{ . }} words"
+modified_at: "(Modified at {{ . }})"
 translations: "Translations:"
 see-also: "See Also"
 same-series: "Posts from the series \"{{ . }}\":"
