@@ -10,34 +10,7 @@
 {{ .Content }}
 				</section>
 
-				<section class="beauty-content page-content">
-{{- if or .Params.series .Params.categories }}
-					<hr class="mt-5 w-50 dashed">
-					<div class="see-also">
-						<h3 id="see-also">{{ T "see-also" }}</h3>
-	{{- if .Params.series }}
-		{{- partial "seealso.html" (dict
-			"message" (T "same-series" .Params.series)
-			"page" .
-			"pages" (where site.Pages ".Params.series" .Params.series).ByPublishDate
-		) }}
-	{{- else if not site.Params.enableNewInCategory }}
-		{{- partial "seealso.html" (dict
-			"message" (T "same-category" (title (index .Params.categories 0)))
-			"pages" (
-				first 5 (
-					complement (slice .) (
-						where site.Pages ".Params.categories" "intersect" .Params.categories
-					)
-				)
-			)
-		) }}
-	{{- end }}
-					</div>
-{{- end }}
-				</section>
-
-				<section class="post-footer mt-5">
+				<section class="page-footer my-5">
 					{{- with site.Params.signature }}
 					<div class="signature fst-italic">
 						<p>-- <br>{{ . | strings.TrimSpace }}</p>
@@ -49,18 +22,50 @@
 					</div>
 					<div class="ending-comment">
 					</div>
-					<div>
+				</section>
+
+				<section class="page-seealso my-5">
+{{- if or .Params.series .Params.categories }}
+					<div class="see-also">
+						<h3 id="see-also">{{ T "see-also" }}</h3>
+	{{- if .Params.series }}
+{{ partial "seealso.html" (dict
+			"message" (T "same-series" .Params.series)
+			"page" .
+			"pages" (where site.Pages ".Params.series" .Params.series).ByPublishDate
+		) }}
+	{{- else if not site.Params.enableNewInCategory }}
+{{ partial "seealso.html" (dict
+			"message" (T "same-category" (title (index .Params.categories 0)))
+			"pages" (
+				first 5 (
+					complement (slice .) (
+						where site.Pages ".Params.categories" "intersect" .Params.categories
+					)
+				)
+			)
+		) }}
+	{{- end }}
+	{{- range .Params.sisters }}
+{{ partial "seealso.html" (dict
+			"message" (T "same-series" .)
+			"pages" (where site.Pages ".Params.series" .).ByPublishDate
+		) }}
+	{{- end }}
+	{{- with index .Params.categories 0 }}
+						<p><a href="/categories/{{ . }}/">{{ T "all-in-the-category" (title .) }}</a></p>
+	{{- end }}
 					</div>
+{{- end }}
+				</section>
 
 	{{- if or (in site.MainSections .Type) .Params.comments }}
 		{{- if .Site.Config.Services.Disqus.Shortname }}
-					<section class="comments">
-						<div class="disqus-comments">
+				<section class="page-comments">
+					<div class="disqus-comments">
 						{{- partial "disqus.html" . }}
-						</div>
-					</section>
+					</div>
+				</section>
 		{{- end }}
 	{{- end }}
-
-				</section>
 {{- end }}

@@ -150,9 +150,9 @@ img {
 	}
 }
 
-// --- post preview ----------------------------------------------------------
-.beauty-post-preview {
-	a.beauty-post-link {
+// --- page preview ----------------------------------------------------------
+.beauty-page-preview {
+	a.beauty-page-link {
 		--bs-link-color-rgb: var(--bs-body-color-rgb);
 		&:hover {
 			--bs-link-color-rgb: var(--bs-link-hover-color-rgb);
@@ -162,7 +162,7 @@ img {
 			width: auto;
 		}
 	}
-	.post-summary {
+	.page-summary {
 		a {
 			color: var(--bs-body-color-rgb);
 		}
@@ -194,8 +194,8 @@ img {
 			font-size: 2.4rem;
 		}
 	}
-	.beauty-post-preview {
-		.post-subtitle {
+	.beauty-page-preview {
+		.page-subtitle {
 			font-size: 1.05rem !important;
 		}
 	}

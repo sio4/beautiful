@@ -14,8 +14,9 @@
 	--bh-box-shadow: 2px 2px 8px #101010;
 }
 
-// --- post/page content -----------------------------------------------------
-.post-summary,
+// --- page content ----------------------------------------------------------
+.page-summary,
+.page-seealso,
 .page-content {
 	h1, h2 { margin: 2.0em 0 1rem; }
 	h3, h4 { margin: 1.5em 0 1rem; }
@@ -246,7 +247,7 @@
 	}
 }
 
-.post-footer {
+.page-footer {
 	ul.social-share {
 		li {
 			display: inline;
@@ -318,9 +319,9 @@ p.caption {
 	}
 }
 
-.post-tags {
-	.post-tags-list {
-		.post-tag {
+.page-tags {
+	.page-tags-list {
+		.page-tag {
 			a {
 				&:before {
 					font-family: "Font Awesome 7 Free";
