@@ -115,6 +115,7 @@
 	dl {
 		dd { padding-left: 2rem; }
 
+		&.message,
 		&.help, &.info, &.warn, &.keypoint, &.point {
 			margin: 1.5em 0; // checkme
 			dt {
@@ -130,24 +131,28 @@
 			}
 		}
 
+		&.message dt:before { content: "\f27a"; }
 		&.point dt:before { content: "\f0eb"; }
 		&.keypoint dt:before { content: "\f084"; font-weight: bold; }
 		&.warn dt:before { content: "\f071"; font-weight: bold; }
+		&.info dt:before { content: "\f05a"; font-weight: bold; }
+		&.help dt:before { content: "\f059"; font-weight: bold; }
+
+		&.message,
 		&.info {
 			dt {
 				color: var(--bs-body-color);
 				font-weight: normal;
-				&:before { font-weight: bold; content: "\f05a"; }
 			}
 			dd {
 				color: var(--bs-tertiary-color);
 			}
 		}
+
 		&.help {
 			dt {
 				color: var(--bs-body-color);
 				font-weight: normal;
-				&:before { font-weight: bold; content: "\f059"; }
 			}
 		}
 	}
