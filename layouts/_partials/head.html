@@ -12,6 +12,7 @@
 {{- else }}
 	<link rel="icon" href="/favicon.ico">
 {{- end }}
+	<link rel="canonical" href="{{ .Permalink }}">
 {{ partial "head/meta" . }}
 {{ partial "head/structured" . }}
 {{ partial "opengraph" . }}
