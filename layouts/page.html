@@ -20,8 +20,15 @@
 					<div class="social-share">
 {{- partial "share.html" . }}
 					</div>
-					<div class="ending-comment">
+{{- if (or .Params.endingComments (ne .Type "page")) }}
+	{{- with or .Params.endingComments site.Params.endingComments }}
+					<div class="ending-comment text-center text-muted">
+		{{- range . }}
+						<p>{{ . }}</p>
+		{{- end }}
 					</div>
+	{{- end }}
+{{- end }}
 				</section>
 
 				<section class="page-seealso my-5">

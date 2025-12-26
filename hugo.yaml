@@ -36,6 +36,7 @@ params:
   usePagefind: true
   notFoundTo: /search/
   hideTagLessThan: 1
+  #endingComments:
   author:
     name: YOUR_NAME
     github: YOUR_GITHUB_ID
