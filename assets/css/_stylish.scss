@@ -268,11 +268,14 @@
 .dropshadow { box-shadow: var(--bh-box-shadow); }
 .inline-badges {
 	line-height: 0;
-	a { display: inline-block; }
+	> * { display: inline-block; }
 }
 p.caption {
 	font-size: 0.8rem;
 	text-align: center;
+	img {
+		margin-bottom: 0.25rem;
+	}
 }
 
 // .onethird { max-width: 33% !important; display: block; }

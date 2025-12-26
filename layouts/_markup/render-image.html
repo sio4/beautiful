@@ -1,17 +1,22 @@
-{{- if .IsBlock -}}
-<figure>
-<img src="{{ .Destination | safeURL }}" class="mb-0
+{{- if and .IsBlock .Title }}
+<figure
+	{{- with .Attributes.id }} id="{{ . }}"{{ end -}}
+	>
+	<img src="{{ .Destination | safeURL }}" class="mb-1
 	{{- with .Attributes.class }} {{ . }}{{ end -}}"
 	{{- with .Attributes.id }} id="{{ . }}"{{ end -}}
 	{{- with or .PlainText .Title }} alt="{{ . }}"{{ end -}}
+	{{- with or .Title .PlainText }} title="{{ . }}"{{ end -}}
 	>
 	{{- with or .PlainText .Title }}
-<figcaption class="text-center small text-muted">{{ . }}</figcaption>
+	<figcaption class="text-center small text-muted">{{ . }}</figcaption>
 	{{- end }}
 </figure>
 {{- else }}
 <img src="{{ .Destination | safeURL }}"
-	{{- with .PlainText }} alt="{{ . }}"{{ end -}}
+	{{- with .Attributes.class }} class="{{ . }}"{{ end -}}
+	{{- with .Attributes.id }} id="{{ . }}"{{ end -}}
+	{{- with or .PlainText .Title }} alt="{{ . }}"{{ end -}}
 	{{- with or .Title .PlainText }} title="{{ . }}"{{ end -}}
 >
 {{- end }}
