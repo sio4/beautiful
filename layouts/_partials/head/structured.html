@@ -154,7 +154,9 @@
 		"position": 1,
 		"name": {{ site.Title }},
 		"item": {{ site.BaseURL }}
-	},
+	}
+{{- if ne .RelPermalink "/" -}}
+	,
 	{{- $num := 2 }}
 	{{- $path := "/" }}
 	{{- range (split (trim (replace .RelPermalink "/" " ") " ") " ") }}
@@ -179,6 +181,7 @@
 		{{- end -}}
 		{{- $num = add $num 1 }}
 	{{- end -}}
+{{- end -}}
 	]
 }]
 	</script>
