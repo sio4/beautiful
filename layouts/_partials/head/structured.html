@@ -71,8 +71,11 @@
 	{{- range first 1 $images }}
 		{{ absURL .Permalink }}
 	{{- end}}
-	],
-	"keywords": {{ .Params.Tags }}
+	]
+	{{- with .Store.Get "keywords" -}}
+	,
+	"keywords": {{ . }}
+	{{- end }}
 }
 	</script>
 {{- end }}
@@ -90,57 +93,11 @@
 	},{
 		"@type": "ListItem",
 		"position": 2,
-		"name": "{{ $.Title }}",
-		"item": {{ $.Permalink }}
-	}]
-},{
-	"@context": "https://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [{
-		"@type": "ListItem",
-		"position": 1,
-		"name": {{ site.Title }},
-		"item": {{ site.BaseURL }}
-	},{
-		"@type": "ListItem",
-		"position": 2,
-		"name": "Categories",
-		"item": {{ absURL "/categories/" }}
-	},{
-		"@type": "ListItem",
-		"position": 3,
 		"name": "{{ .LinkTitle }}",
 		"item": {{ .Permalink }}
 	},{
 		"@type": "ListItem",
-		"position": 4,
-		"name": "{{ $.Title }}",
-		"item": {{ $.Permalink }}
-	}]
-},
-{{- end -}}
-{{- range .GetTerms "tags" -}}
-{
-	"@context": "https://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [{
-		"@type": "ListItem",
-		"position": 1,
-		"name": {{ site.Title }},
-		"item": {{ site.BaseURL }}
-	},{
-		"@type": "ListItem",
-		"position": 2,
-		"name": "Tags",
-		"item": {{ absURL "/tags/" }}
-	},{
-		"@type": "ListItem",
 		"position": 3,
-		"name": "{{ .LinkTitle }}",
-		"item": {{ .Permalink }}
-	},{
-		"@type": "ListItem",
-		"position": 4,
 		"name": "{{ $.Title }}",
 		"item": {{ $.Permalink }}
 	}]

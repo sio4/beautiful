@@ -56,6 +56,9 @@ Keywords precedence:
 		{{- end }}
 	{{- end }}
 {{- end }}
+{{- /* store the keywords so the other templates can use it. */ -}}
+{{- .Store.Set "keywords" $keywords }}
+
 {{- with $keywords }}
 	<meta name="keywords" content="{{ delimit . `,` }}">
 {{- end -}}
