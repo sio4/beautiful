@@ -277,6 +277,15 @@ p.caption {
 		margin-bottom: 0.25rem;
 	}
 }
+.boxed {
+	color: var(--bs-body-color);
+	background: var(--bs-tertiary-bg);
+	border: 1px solid var(--bs-secondary-bg);
+	padding: 0.5em 1em;
+	&.rounded {
+		border-radius: 0.5em;
+	}
+}
 
 // .onethird { max-width: 33% !important; display: block; }
 // .twothird { max-width: 66% !important; display: block; }
@@ -286,11 +295,6 @@ p.caption {
 //	margin: 0.5rem 2rem !important;
 //	&.pull-right { margin-right: 0 !important; }
 //	&.pull-left { margin-left: 0 !important; }
-// }
-// .mix-boxed {
-//	border: 1px solid $color-light;
-//	padding: 2px 8px;
-//	&.mix-round { border-radius: 8px; }
 // }
 // .mix-large { font-size: 1.2em; }
 // .mix-xlarge { font-size: 1.4em; }
