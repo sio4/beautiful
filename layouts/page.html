@@ -59,8 +59,8 @@
 			"pages" (where site.Pages ".Params.series" .).ByPublishDate
 		) }}
 	{{- end }}
-	{{- with index .Params.categories 0 }}
-						<p><a href="/categories/{{ . }}/">{{ T "all-in-the-category" (title .) }}</a></p>
+	{{- range .GetTerms "categories" }}
+						<p><a href="{{ .RelPermalink }}">{{ T "all-in-the-category" (title .LinkTitle) }}</a></p>
 	{{- end }}
 					</div>
 {{- end }}
