@@ -76,6 +76,12 @@
 	ul {
 		li {
 			list-style: square;
+			&:has(ul) {
+				margin-bottom: 0.25em;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
 		}
 		&.nodot > li {
 			list-style: none;
