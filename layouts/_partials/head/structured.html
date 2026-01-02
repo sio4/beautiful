@@ -1,39 +1,69 @@
+	<script type="application/ld+json">
 {{- with site.Data.scheme.website }}
-	<script type="application/ld+json">
 {{ . }}
-	</script>
 {{- else }}
-	<script type="application/ld+json">
 {
 	"@context": "https://schema.org",
 	"@type": "WebSite",
 	"url": {{ site.BaseURL }},
 	"name": {{ site.Title }}
 }
-	</script>
 {{- end }}
-
-{{- with site.Data.scheme.organization }}
-	<script type="application/ld+json">
-{{ . }}
 	</script>
+	<script type="application/ld+json">
+{{- with site.Data.scheme.organization }}
+{{ . }}
 {{- else }}
-	<script type=application/ld+json>
 {
 	"@context":"https://schema.org",
 	"@type":"Organization",
 	"url": {{ site.BaseURL }},
-	"name": {{ site.Title }}
+	"logo": {{ absURL site.Params.logo }},
+	"name": {{ site.Title }},
+	"description": {{ strings.TrimSpace site.Params.description }},
+	"address": {
+		"@type": "PostalAddress"
+	}
 }
+{{- end }}
 	</script>
+
+{{- $sameAs := slice }}
+{{- range $k, $v := site.Params.author }}
+	{{- $s := index site.Data.beautiful.social $k }}
+	{{- with $s }}
+	{{- $sameAs = $sameAs | append (printf .url $v) }}
+	{{- end }}
 {{- end }}
 
 {{- if .IsPage }}
-	{{- with site.Data.scheme.author }}
 	<script type="application/ld+json">
+	{{- with site.Data.scheme.author }}
 {{ . }}
-	</script>
+  {{- else }}
+{
+	"@context": "http://schema.org",
+	"@type": "ProfilePage",
+	"mainEntity": {
+		"@type": "Person",
+		{{- with site.Params.author.name }}
+		"name": {{ . }},
+		{{- end }}
+		{{- with site.Params.author.nick }}
+		"alternateName": {{ . }},
+		{{- end }}
+		{{- with or site.Params.author.description site.Params.description }}
+		"description": {{ strings.TrimSpace . }},
+		{{- end }}
+		{{- if $sameAs }}
+		"sameAs": {{ $sameAs }},
+		{{- end }}
+		"image": {{ absURL (or site.Params.author.image site.Params.logo) }},
+		"url": {{ or site.Params.author.url site.BaseURL }}
+	}
+}
 	{{- end }}
+	</script>
 
 	{{- $description := or .Description .Summary site.Params.description | plainify | htmlUnescape | truncate 500 }}
 	<script type=application/ld+json>
@@ -55,9 +85,8 @@
 		"@id": {{ site.BaseURL }},
 		"url": {{ site.BaseURL }},
 		"name": {{ site.Title }},
-		"logo": {
-			"@type": "ImageObject",
-			"url": {{ absURL site.Params.logo }}
+		"logo": {{ absURL site.Params.logo }},
+		"address": {
 		}
 	},
 	"author": [{
