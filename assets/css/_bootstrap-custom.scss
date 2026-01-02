@@ -185,14 +185,55 @@
 }
 
 .navbar {
+	--bs-navbar-active-color: var(--bs-light);
 	--bs-navbar-toggler-border-color: transparent;
 	--bs-navbar-toggler-focus-width: 0;
 }
 
+.navbar-nav {
+	--bs-nav-link-color: var(--bs-light);
+	--bs-nav-link-hover-color: var(--bs-link-color);
+}
+
 .dropdown-menu {
+	--bs-dropdown-bg: var(--bs-gray-900);
+	--bs-dropdown-link-color: var(--bs-white);
+	--bs-dropdown-link-hover-color: var(--bs-white);
+	--bs-dropdown-link-hover-bg: var(--bs-gray-800);
+	--bs-dropdown-link-active-color: var(--bs-gray-900);
+	--bs-dropdown-link-active-bg: var(--bs-gray-200);
 	--bs-dropdown-border-width: 0;
 	--bs-dropdown-padding-x: 1rem;
 	--bs-dropdown-padding-y: 0;
+}
+
+/* --- extra: color mode --- */
+.bi {
+	width: 1em;
+	height: 1em;
+	fill: currentcolor;
+}
+
+.colormode {
+	.dropdown-menu {
+		padding: .25rem;
+		li+li {
+			margin-top: .25rem;
+		}
+	}
+
+	.dropdown-item {
+    height: 30px;
+    line-height: 1;
+		border-radius: .25rem;
+	}
+
+	.active {
+		font-weight: 600;
+		.bi {
+			display: block !important;
+		}
+	}
 }
 
 /* --- workaround for bootstrap --- */

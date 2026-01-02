@@ -4,6 +4,9 @@ minute:
 word:
   one: "{{ . }} word"
   other: "{{ . }} words"
+light: Light
+dark: Dark
+auto: System
 modified_at: "(Modified at {{ . }})"
 translations: "Translations:"
 see-also: "See Also"

@@ -4,6 +4,9 @@ minute:
 word:
   one: "{{ . }} 단어"
   other: "{{ . }} 단어"
+light: 밝게
+dark: 어둡게
+auto: 시스템
 modified_at: "(수정 {{ . }})"
 translations: "다른 언어:"
 see-also: "함께 읽기"
